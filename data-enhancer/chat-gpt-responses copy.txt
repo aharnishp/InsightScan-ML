@@ -1,0 +1,31 @@
+margarine	['List all ingredients of the mayonnaise comma separated', 'Soybean oil, egg yolk, distilled vinegar, water, salt, garlic, natural flavors, calcium disodium EDTA.']
+butter	['water, salt, butter']
+ghee	['Coconut Oil, Ghee, Unsalted Butter']
+coconut oil	['Shea butter, coconut oil, jojoba oil, sweet almond oil', 'Shea butter, coconut oil, jojoba oil, sweet almond oil']
+vegetable oil	['Olive Oil', 'Sunflower Oil', 'Peanut Oil', 'Soybean Oil', 'vegetable oil', 'List all ingredients (including the vegetable oil) comma separated', 'Olive Oil', 'Sunflower Oil', 'Peanut Oil', 'Soybean Oil', 'vegetable oil']
+shortening	['Butter, shortening, vegetable oil']
+olive oil	['List all ingredients of the hummus comma separated', 'Chickpeas, Tahini, Garlic, Olive oil, Lemon juice, Salt', 'List all ingredients of the tahini comma separated', 'Sesame seeds, Olive oil, Tahini', 'List all ingredients of the chili comma separated', 'Cayenne pepper, Chili pepper, Garlic, Ground cumin, Ground coriander, Paprika, Salt,']
+cooking oil	[]
+butter flavored cooking spray	['Butter, soybean oil, cottonseed oil, natural flavors, dimethylpolysiloxane, salt, garlic', 'Marinara sauce', 'What are the ingredients of Marinara sauce?', 'Tomatoes, tomato paste, onions, garlic, oregano, basil, olive oil, salt, black pepper']
+
+
+1. Pura Butter
+['2. Skin Food', 'Extra Virgin Olive Oil, Cocoa Butter, Cocoa Mass, Buttermilk, Shea Butter, Almond Oil, Rice Bran Oil, Emulsifying Wax', '3. Nivea', 'Water, Mineral Oil, Petrolatum, Glycerin, Lanolin, Paraffinum Liquidum, Cetearyl Alcohol, Phenoxyethanol, Ceteareth20, Ceteareth12, Fragrance']
+2. Pure India Butter
+['chicken, tomato, onion, garlic, ginger, green chili, garam masala, coriander, cumin, coriander seed, cumin seed, paprika, paprika, cayenne pepper, cardamom, cinnamon']
+3. Amul Butter
+[' Milk', ' Salt', ' Stabiliser', ' Vegetable oil', '2) Amul butter spread', ' Milk', ' Salt', ' Stabiliser', ' Vegetable oil', ' Emulsifiers', ' Flavours', '3) Amul butter oil', ' Amul butter', ' Vegetable oil', 'List all ingredients of the 4. Amul Cheese', '1) Amul cheese', ' Milk', ' Salt']
+4. Impact Yogurt
+['Mixed berries, granola, honey, and yogurt']
+5. La Vieille Ferme Dairy
+['Eggs, milk, cream, sugar, butter, baking powder, salt, vanilla and nutmeg', 'What are the benefits of La Vieille Ferme Dairy Products?', 'There are no benefits listed for La Vieille Ferme Dairy Products.', 'List two products that La Vieille Ferme Dairy Products can be used as a substitute for', 'La Vieille Ferme Dairy Products can be used as a substitute for whipping cream and milk.']
+6. Yoplait Original
+[]
+7. Stonyfield Organic
+['Organic Whole Milk (pasteurized), Filtered Water, Organic Sugar, Organic and Unsweetened Agave Syrup, Organic Dried Cultured Skim Milk, Organic Locust Bean Gum, Organic Guar Gum, Live Active Cultures: L. Acidophilus, L. Bulgaricus, L. Casei, L. Rhamnosus, L. Thermophilus']
+8. Yoplait Light
+['yoplait light and fit yogurt, strawberry, 5g of sugar, calcium, potassium, vitamins a, c, d2, calcium, potassium.', 'Amount per serving: 1 cup (240g)', 'Total amount per container: 16 servings', 'Amount per serving', '% Daily Value', 'Calories 60', 'Total Fat 0g', 'Saturated Fat 0g', 'Trans Fat 0g', 'Cholesterol 0mg', 'Sodium']
+9. Barilla Pasta
+['Water, Durum Semolina, Yeast, Salt']
+10. Barilla Pasta Sauce
+['List all ingredients of the 11. Newman’s Own Dressing', 'canola oil, red wine vinegar, egg yolks, lemon juice, soy sauce, Dijon mustard, garlic, shallots, sugar, salt, black pepper, basil', 'List all ingredients of the 12. Lays Chips', 'potatoes, canola and/or vegetable']
