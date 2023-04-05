@@ -36,8 +36,9 @@ for item in items:
 
     # prompt = "Generate a list of branded food products that are similar to " + str(item) + ". Please include the product name, brand, and any relevant details such as flavor or packaging. Use your knowledge of the food industry and consumer preferences to generate the most relevant and up-to-date recommendations. "
     # prompt = "Generate a list of branded food products that are similar to the following product: " + str(item) + ". Please provide the product name in the format 'Brand, Product Name', with a comma separating the brand and product name. Please include the product name, brand, and any relevant details such as flavor or packaging. Use your knowledge of the food industry and consumer preferences to generate the most relevant and up-to-date recommendations. "
-    prompt = "Generate a comma-separated list of branded food products that are similar to " + str(item) + ". Include only the product name and brand, with no additional words or descriptions. Please use your knowledge of the food industry and consumer preferences to generate the most relevant and up-to-date recommendations."
+    # prompt = "Generate a comma-separated list of branded food products that are similar to " + str(item) + ". Include only the product name and brand, with no additional words or descriptions. Please use your knowledge of the food industry and consumer preferences to generate the most relevant and up-to-date recommendations."
 
+    prompt = "List comma separated list of 10 food product names which are similar to the food product " + str(item)
 
     print("prompt: ", prompt)
 
@@ -47,7 +48,7 @@ for item in items:
         engine="davinci-instruct-beta",
         # engine="ada-instruct-beta",
         prompt=prompt,
-        max_tokens=200,
+        max_tokens=1024,
         n=1,
         stop=None,
         temperature=0.75,
@@ -57,33 +58,58 @@ for item in items:
     print("Raw response: ", response.choices[0].text)
 
     # similar_products = response.choices[0].text.replace("-", "").split("\n")
-    similar_products = response.choices[0].text.split(",")
-
-    # remove bullet points
-    similar_products = [x.replace("-", "") for x in similar_products]
-
-    # remove all numbered bullet points
+    similar_products = response.choices[0].text.split("\n")
     
+    similar_products = similar_products[1:]
 
+    # split all elements in the list by comma
+    similar_products = [x.split(",") for x in similar_products]
 
-    # drop only numeric elements in the list
-    similar_products = [x for x in similar_products if not x.isdigit()]
+    # flatten the list
+    similar_products = [item for sublist in similar_products for item in sublist]
 
-    # remove space in front and back
+    #split all elements in the list by .
+    similar_products = [x.split(".") for x in similar_products]
+
+    # flatten the list
+    similar_products = [item for sublist in similar_products for item in sublist]
+
+    # strip strings
     similar_products = [x.strip() for x in similar_products]
 
-    # drop empty string
-    similar_products = [x for x in similar_products if x]
+    # remove empty strings
+    similar_products = list(filter(None, similar_products))
 
-    # drop the first element, as it is the prompt itself
-    similar_products = similar_products[1:]
+
+
+
+    # cumulative_list = []
+    # for line in similar_products:
+    #     # remove all empty elements
+    #     line = list(filter(None, line))
+
+    #     # remove all elements that are numbers
+    #     line = [x for x in line if not x.isdigit()]
+
+    #     # remove all elements that are less than 3 characters
+    #     line = [x for x in line if len(x) > 3]
+
+    #     # strip all elements of whitespace
+    #     line = [x.strip() for x in line]
+
+    #     # flatten the list
+    #     line = [item for sublist in line for item in sublist]
+
+    #     # append the line to the cumulative list
+    #     if line:
+    #         cumulative_list.append(line)
+
+
+
     
     print("Similar products: ", similar_products)
-
-    # drop the first element, as it is the prompt itself
-    similar_products = similar_products[1:]
 
     # append the product names to the file
     with open("data-enhancer/similar-products.csv", "a") as f:
         for product in similar_products:
-            f.write(item + "," + product + "\n")
+            f.write(str(item) + "," + str(product) + "\n")
