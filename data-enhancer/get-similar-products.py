@@ -59,11 +59,12 @@ for item in items:
     # similar_products = response.choices[0].text.replace("-", "").split("\n")
     similar_products = response.choices[0].text.split(",")
 
-    # also separate by numberings 
-    similar_products = [x.split(".") for x in similar_products]
+    # remove bullet points
+    similar_products = [x.replace("-", "") for x in similar_products]
 
-    # flatten the list
-    similar_products = [item for sublist in similar_products for item in sublist]
+    # remove all numbered bullet points
+    
+
 
     # drop only numeric elements in the list
     similar_products = [x for x in similar_products if not x.isdigit()]
