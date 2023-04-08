@@ -22,7 +22,7 @@ with open("data-enhancer/chat-gpt-responses.txt", "w") as f:
 
 existingItems = ""
 # open file data-cleaning/dataset/sample.md and read the contents
-with open("data-cleaning/dataset/sample.md", "r") as f:
+with open("data-cleaning/dataset/sample2.md", "r") as f:
     existingItems = f.read()
 
 # split the contents by newline
