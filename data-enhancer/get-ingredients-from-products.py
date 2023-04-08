@@ -4,7 +4,10 @@ import time
 file_contents = ""
 
 # read file similar-products.csv
-with open('data-enhancer/similar-products-final-filtered.csv', 'r') as file:
+
+
+# with open('data-enhancer/similar-products-final-filtered.csv', 'r') as file:
+with open('data-enhancer/similar-products.csv', 'r') as file:
     file_contents = file.read()
 
 # split file contents into lines
@@ -33,14 +36,14 @@ for line in lines:
     print("###",prod)
 
     # Define your prompt
-    prompt = "List comma separated list of all ingredients of the product " + str(prod)
+    prompt = "List comma separated list of all ingredients of the beauty product " + str(prod) + ".  "
 
     # Send a request to OpenAI's API
     response = openai.Completion.create(
         engine="davinci-instruct-beta",
         prompt=prompt,
-        temperature=0.8,
-        max_tokens=1024,
+        temperature=0.75,
+        max_tokens=512,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0.6,
@@ -51,6 +54,7 @@ for line in lines:
 
 
     separated = response.choices[0].text.split(',')
+
 
     # strip whitespace
     separated = [x.strip() for x in separated]
@@ -68,5 +72,5 @@ for line in lines:
     with open("data-enhancer/ingridients.txt", "a") as f:
         f.write(prod + '>>' + ','.join(separated) + '\n')
 
-    # wait for 1 second
-    time.sleep(1)
+    # wait for 4 second
+    time.sleep(4)
