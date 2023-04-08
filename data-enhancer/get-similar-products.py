@@ -61,7 +61,7 @@ items = existingItems
 # Loop through each item in the list and ask ChatGPT
 for item in items:
     # Define your prompt for ChatGPT
-    prompt = "List comma separated list of 10 food product names which are similar to the food product " + str(item)
+    prompt = "List comma separated list of 10 beauty product names which are similar to the beauty product " + str(item)
 
     print("prompt: ", prompt)
 
@@ -74,7 +74,7 @@ for item in items:
         max_tokens=1024,
         n=1,
         stop=None,
-        temperature=0.75,
+        temperature=0.8,
     )
 
 
