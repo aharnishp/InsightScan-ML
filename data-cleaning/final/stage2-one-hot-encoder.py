@@ -55,7 +55,7 @@ for line in lines:
 
         
     # check if the label exists in ingredients
-    newLine = line[0] + "," + "1" + onehot + "\n"
+    newLine = line[0].replace(",", " ") + "," + "1" + onehot + "\n"
 
     rows.append(newLine)
     
@@ -99,7 +99,7 @@ for line in lines:
 
         
     # check if the label exists in ingredients
-    newLine = line[0] + "," + "1" + onehot + "\n"
+    newLine = line[0].replace(",", " ") + "," + "0" + onehot + "\n"
 
     rows.append(newLine)
     
