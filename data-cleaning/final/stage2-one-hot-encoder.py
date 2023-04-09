@@ -7,7 +7,7 @@ with open("data/labels2.csv", "r") as f:
     # remove the last element
     labellines = labellines[:-1]
 
-print(labellines)
+# print(labellines)
 
 
 
@@ -25,6 +25,52 @@ rows = []
 for line in lines:
     # split the line
     line = line.split(">>")
+    if(len(line) < 2):
+        continue
+    ingr = line[1]
+    # split the ingredients by comma
+    ingr = ingr.lower().replace("\n"," ").replace("\t"," ").replace("("," ").replace("."," ").replace(")"," ").replace('"','').replace('*','').replace("["," ").replace("]"," ").replace("ii"," ").replace("iii"," ").split(",")
+    
+    # for each ingredient
+    for i in ingr:
+        # split by space
+        i = i.split(" ")
+
+        # remove only numeric elements
+        i = [x for x in i if not x.isdigit()]
+
+        # remove elements ending with %
+        i = [x for x in i if not x.endswith("%")]
+        i = [x for x in i if not x.endswith("ml")]
+        i = [x for x in i if not x.endswith("g")]
+        i = [x for x in i if not x.endswith("gm")]
+
+    onehot = ""
+
+    for label in labellines:
+        if(label in ingr):
+            onehot += ",1"
+        else:
+            onehot += ",0"
+
+        
+    # check if the label exists in ingredients
+    newLine = line[0] + "," + "1" + onehot + "\n"
+
+    rows.append(newLine)
+    
+
+# read file 
+with open("data/ingridients-food.txt", "r") as f:
+    # read lines
+    lines = f.readlines()
+
+# for each line
+for line in lines:
+    # split the line
+    line = line.split(">>")
+    if(len(line) < 2):
+        continue
     ingr = line[1]
     # split the ingredients by comma
     ingr = ingr.lower().replace("\n"," ").replace("\t"," ").replace("("," ").replace("."," ").replace(")"," ").replace('"','').replace('*','').replace("["," ").replace("]"," ").replace("ii"," ").replace("iii"," ").split(",")
