@@ -55,9 +55,9 @@ for line in lines:
 
     for label in labellines:
         if(label.lower() in new_ingr):
-            onehot += ",1"
-        else:
-            onehot += ",0"
+            onehot += " "+str(label)
+        # else:
+            # onehot += ","
 
         
     # check if the label exists in ingredients
@@ -104,9 +104,7 @@ for line in lines:
 
     for label in labellines:
         if(label.lower() in new_ingr):
-            onehot += ",1"
-        else:
-            onehot += ",0"
+            onehot += " "+str(label)
 
         
     # check if the label exists in ingredients
@@ -116,7 +114,7 @@ for line in lines:
     
 
 # write the one hot encoded data to data/onehot.csv
-with open("data/onehot.csv", "w") as f:
+with open("data/nonehot.csv", "w") as f:
     # write headers
     f.write("Name,Class," + ",".join(labellines) + "\n")
     for row in rows:
