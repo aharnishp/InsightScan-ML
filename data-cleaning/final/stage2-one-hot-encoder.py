@@ -12,7 +12,7 @@ with open("data/labels2.csv", "r") as f:
 
 
 # read file 
-with open("data/ingridients-food_.csv", "r",encoding="utf8") as f:
+with open("data/ingridients-food.txt", "r") as f:
     # read lines
     lines = f.readlines()
 
